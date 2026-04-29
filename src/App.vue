@@ -51,6 +51,13 @@ const dashboardSiswaMenuClass = computed(() => {
     ? 'flex items-center gap-3 border-r-4 border-sky-500 bg-sky-50 px-3 py-3 font-semibold text-sky-600'
     : 'flex items-center gap-3 px-3 py-3 text-slate-500 transition hover:bg-slate-50 hover:text-sky-500'
 })
+
+const nilaiMenuClass = computed(() => {
+  const isActive = route.path.startsWith('/nilai')
+  return isActive
+    ? 'flex items-center gap-3 border-r-4 border-sky-500 bg-sky-50 px-3 py-3 font-semibold text-sky-600'
+    : 'flex items-center gap-3 px-3 py-3 text-slate-500 transition hover:bg-slate-50 hover:text-sky-500'
+})
 </script>
 
 <template>
@@ -81,10 +88,9 @@ const dashboardSiswaMenuClass = computed(() => {
         <RouterLink :class="jadwalUjianMenuClass" to="/jadwal-ujian">
           <span>Jadwal Ujian</span>
         </RouterLink>
-        <a class="flex items-center gap-3 px-3 py-3 text-slate-500 transition hover:bg-slate-50 hover:text-sky-500"
-          href="#">
+        <RouterLink :class="nilaiMenuClass" to="/nilai">
           <span>Nilai</span>
-        </a>
+        </RouterLink>
       </nav>
 
       <div class="mt-auto border-t border-slate-100 px-6 pt-6">
