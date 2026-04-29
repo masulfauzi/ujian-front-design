@@ -5,6 +5,7 @@ import loginRoutes from './modules/login'
 import ujianRoutes from './modules/ujian'
 import pesertaUjianRoutes from './modules/pesertaUjian'
 import jadwalUjianRoutes from './modules/jadwalUjian'
+import nilaiRoutes from './modules/nilai'
 
 const routes = [
     {
@@ -17,6 +18,7 @@ const routes = [
     ...ujianRoutes,
     ...pesertaUjianRoutes,
     ...jadwalUjianRoutes,
+    ...nilaiRoutes,
 ]
 
 const router = createRouter({
